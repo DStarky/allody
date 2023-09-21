@@ -1,0 +1,118 @@
+.hero {
+  height: 100vh;
+  background:
+    // url('/images/hero-glow-center.png') center / 100% 100% no-repeat,
+    url('/images/hero-bg.png') center / cover no-repeat;
+  background-blend-mode: screen;
+  position: relative;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('/images/hero-glow-bottom-2.png') center bottom / 100% 20% no-repeat;
+    mix-blend-mode: multiply;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: url('/images/hero-glow-bottom.png') center bottom / 100% 40% no-repeat;
+    // mix-blend-mode: multiply;
+  }
+
+  &__container {
+    height: 100%;
+    width: 100%;
+    padding: 4rem 5rem 6rem;
+  }
+
+  &__characters {
+    height: 100%;
+    background: url('/images/hero-woman.png') left center / 577px 100% no-repeat,
+      url('/images/hero-man.png') right center / 678px 100% no-repeat;
+      position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url('/images/left-gradient.png') left center / 462px 100% no-repeat;
+      mix-blend-mode: multiply;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: url('/images/right-gradient.png') right center / 462px 100% no-repeat;
+      mix-blend-mode: multiply;
+    }
+  }
+
+  &__content {
+    height: 100%;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+
+  &__boxes-cover {
+    max-width: 67rem;
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__title {
+    font-size: 4.2rem;
+    margin-bottom: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+
+  &__subtitle {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+
+}
+
+.logo-hero {
+
+  &__link {}
+
+  &__cover {
+    max-width: 27rem;
+  }
+
+  &__img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+  }
+}
