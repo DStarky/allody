@@ -1,82 +1,87 @@
 .hero {
-  height: 100vh;
   background:
     url('/images/hero-glow-center.png') center / 100% 100% no-repeat,
     url('/images/hero-bg.png') center / cover no-repeat;
   background-blend-mode: screen;
+  height: 100vh;
   position: relative;
 
   &::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: url('/images/hero-glow-bottom-2.png') center bottom / 100% 20% no-repeat;
+    content: '';
+    height: 100%;
+    left: 50%;
     mix-blend-mode: multiply;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
   }
 
   &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     background: url('/images/hero-glow-bottom.png') center bottom / 100% 40% no-repeat;
+    content: '';
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
     // mix-blend-mode: multiply;
   }
 
   &__container {
     height: 100%;
-    width: 100%;
     padding: 4rem 5rem 6rem;
+    width: 100%;
   }
 
   &__characters {
-    height: 100%;
     background: url('/images/hero-woman.png') left center / 577px 100% no-repeat,
       url('/images/hero-man.png') right center / 678px 100% no-repeat;
-      position: relative;
+    height: 100%;
+    position: relative;
+
+
+    @media screen and (max-width: 998px) {
+      background: url('/images/hero-woman.png') center / 577px 100% no-repeat;
+    }
 
     &::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       background: url('/images/left-gradient.png') left center / 462px 100% no-repeat;
+      content: '';
+      height: 100%;
+      left: 50%;
       mix-blend-mode: multiply;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
     }
 
     &::before {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
       background: url('/images/right-gradient.png') right center / 462px 100% no-repeat;
+      content: '';
+      height: 100%;
+      left: 50%;
       mix-blend-mode: multiply;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
     }
   }
 
   &__content {
-    height: 100%;
+    align-items: center;
     color: #fff;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
     position: relative;
-    z-index: 1;
     text-align: center;
+    z-index: 1;
   }
 
   &__boxes-cover {
@@ -84,15 +89,19 @@
   }
 
   &__img {
-    width: 100%;
     object-fit: cover;
+    width: 100%;
   }
 
   &__title {
     font-size: 4.2rem;
+    font-weight: 700;
     margin-bottom: 2rem;
     text-transform: uppercase;
-    font-weight: 700;
+
+    @media screen and (max-width: 576px) {
+      font-size: 3.2rem;
+    }
   }
 
   &__subtitle {
@@ -111,8 +120,8 @@
   }
 
   &__img {
-    width: 100%;
     display: block;
     object-fit: cover;
+    width: 100%;
   }
 }

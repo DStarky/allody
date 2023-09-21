@@ -3,9 +3,7 @@
   display: flex;
   gap: 2rem;
 
-  &__box {}
-
-  &__content{
+  &__content {
     padding-bottom: 5rem;
   }
 
@@ -28,9 +26,18 @@
 
     @media (any-hover: hover) {
       &:hover {
-        
+
         transform: translateY(-4px);
       }
     }
+  }
+
+  @media screen and (max-width: 998px) {
+    justify-content: center;
+  }
+
+  @media screen and (max-width: 576px) {
+    align-items: center;
+    flex-direction: column;
   }
 }

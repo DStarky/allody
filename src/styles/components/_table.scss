@@ -1,17 +1,21 @@
 .table {
   $table-title-color: #671D00;
   $border-color: #4e2b1d;
-
-  max-width: 60rem;
   color: #fff;
 
+  max-width: 60rem;
+
   &__title {
-    font-size: 1.2rem;
-    text-align: center;
-    text-wrap: nowrap;
     border: 1px solid $border-color;
     color: $table-title-color;
+    font-size: 1.2rem;
     padding: 0.5rem;
+    text-align: center;
+    text-wrap: nowrap;
+
+    @media screen and (max-width: 768px) {
+      text-wrap: wrap;
+    }
 
     &:nth-child(1) {
       grid-column: 3 / 4;
@@ -19,12 +23,18 @@
   }
 
   &__row {
-    padding: 0.6rem;
-    display: grid;
     align-items: center;
-    grid-template-columns: 64px 1fr 14rem 14rem;
+    display: grid;
     gap: 0 2rem;
+    grid-template-columns: 64px 1fr 14rem 14rem;
+    padding: 0.6rem;
 
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: rgba(103, 29, 0, 0.3);
+
+      }
+    }
 
     &:not(:first-child) {
       border: 1px solid $border-color;
@@ -37,9 +47,47 @@
     &:first-child {
       margin-bottom: 1rem;
     }
-  }
 
-  &__icon {}
+    @media screen and (max-width: 768px) {
+      grid-template-columns: 64px 1fr 10rem 10rem;
+    }
+
+    @media screen and (max-width: 576px) {
+      font-size: 1.4rem;
+      font-size: 1.6rem;
+      gap: 6rem 0;
+      grid-template-columns: 1fr 1fr;
+      padding: 2rem;
+
+      &:first-child {
+        display: none;
+      }
+
+      & img {
+        margin: 0 auto;
+      }
+
+      & p {
+        position: relative;
+        text-align: center;
+      }
+
+      & p:nth-child(3)::before,
+      & p:nth-child(4)::before {
+        content: 'Бесплатные сервера:';
+        font-size: 1.2rem;
+        left: 50%;
+        position: absolute;
+        text-decoration: underline;
+        text-transform: lowercase;
+        text-wrap: nowrap;
+        top: -3rem;
+        transform: translateX(-50%);
+      }
+
+
+    }
+  }
 
   &__description {
     flex-grow: 1;

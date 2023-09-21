@@ -1,63 +1,66 @@
 .dog {
   $section-title-color: #416DF4;
-
-  padding: 6rem 3rem;
+  align-items: center;
   background-image: url('/images/dog-bg.png');
   display: flex;
-  align-items: center;
   gap: 2rem;
+
+  padding: 6rem 3rem;
   position: relative;
 
   &::after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     // background-color: red;
-    background: url('/images/hero-glow-bottom.png') center bottom / 100% 20% no-repeat;
+    background: url('/images/hero-glow-bottom.png') center bottom / 100% 100% no-repeat;
+    bottom: 0;
+    content: '';
+    height: 10%;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: 0;
     // mix-blend-mode: multiply;
-  }
-
-
-  @media screen and (max-width: 998px) {
-    flex-direction: column;
   }
 
   &__picture {
     flex-basis: 50%;
     flex-shrink: 1;
-
-
   }
 
   &__cover {
-    max-width: 44rem;
     margin: 0 auto;
+    max-width: 44rem;
     position: relative;
     z-index: 0;
 
+    @media screen and (max-width: 998px) {
+      max-width: 30rem;
+    }
+
     &::after {
+      background: #416DF4;
+      border-radius: 50%;
       content: '';
-      width: 68rem;
+      filter: blur(100px);
       height: 68rem;
+      left: 50%;
+      opacity: 0.2;
       position: absolute;
       top: 50%;
-      left: 50%;
       transform: translate(-50%, -50%);
-      opacity: 0.2;
-      background: #416DF4;
-      mix-blend-mode: lighten;
-      filter: blur(100px);
-      border-radius: 50%;
+      width: 68rem;
       z-index: -1;
+
+      @media screen and (max-width: 998px) {
+        height: 30rem;
+        width: 30rem;
+        opacity: 0.4;
+      }
     }
 
     img {
-      width: 100%;
       object-fit: cover;
+      width: 100%;
     }
   }
 
@@ -66,17 +69,23 @@
   }
 
   &__title {
-    text-transform: uppercase;
     color: $section-title-color;
     font-size: 3rem;
     font-style: normal;
     font-weight: 700;
     margin-bottom: 4rem;
+    text-transform: uppercase;
   }
 
   &__table {
     margin-bottom: 2.5rem;
   }
 
-  &__buy {}
+  @media screen and (max-width: 998px) {
+    flex-direction: column;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 5rem 1rem;
+  }
 }
