@@ -1,0 +1,36 @@
+.buy {
+  align-items: end;
+  display: flex;
+  gap: 2rem;
+
+  &__box {}
+
+  &__content{
+    padding-bottom: 5rem;
+  }
+
+  &__price {
+    color: #fff;
+    font-size: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__button {
+    background-color: #FCFF00;
+    border: none;
+    border-radius: 0.7rem;
+    color: #000;
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 1rem 4rem;
+    text-transform: uppercase;
+    transition: transform 0.2s ease;
+
+    @media (any-hover: hover) {
+      &:hover {
+        
+        transform: translateY(-4px);
+      }
+    }
+  }
+}
